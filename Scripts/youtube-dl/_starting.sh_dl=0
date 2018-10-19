@@ -1,0 +1,26 @@
+#!/bin/bash
+#Created By: J. Medlock
+#Created On: 11.21.15
+
+dirfile=$(ls -1A | wc -l)
+
+while [ $dirfile -gt 3 ] ; do
+	if [ -e *.mkv ] ; then
+	    for f in *.mkv ; do
+		mv -v $f ./convert/$f
+	    done
+	elif [[ -e *.mp4 ]] ; then
+	    for f in *.mp4 ; do
+	    	mv -v $f ./rename/$f
+	    done
+        elif [[ -e *.avi ]] ; then
+            for f in *.avi ; do
+                mv -v $f ./rename/$f
+            done
+	else
+            echo "An error has occurred!"
+	fi
+
+dirfile=$[$dirfile-1]
+
+done
