@@ -1,9 +1,0 @@
-[Unit]
-Description=Shell script to start cameras
-
-[Service]
-Type=forking
-ExecStart=/bin/bash /usr/bin/cameras.sh
-
-[Install]
-WantedBy=multi-user.target
